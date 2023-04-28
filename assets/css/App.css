@@ -328,7 +328,7 @@ header {
     width: 70%;
     border: none;
     border-bottom: 1px solid var(--aquamarine);
-    color: var(--aquamarine);
+    color: var(--aquamarine-alt);
     padding: .5rem;
     background: transparent;
     font-size: 1.1rem;
@@ -357,12 +357,69 @@ header {
 
 #add-btn:hover {
     opacity: 1;
+    transform: translateY(-4px);
 }
 
 .add-icon {
     pointer-events: none;
+    font-size: 1.5rem;
+}
+
+.section-title {
+    color: var(--aquamarine);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section-title span {
+    color: var(--aquamarine-light);
+    font-weight: 900;
+}
+
+.habits {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.habit-container {
+    background: var(--aquamarine);
+    border-radius: 24px;
+    padding: 2rem;
+}
+
+.habit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.habit-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.clock-icon {
+    color: var(--dark);
     font-size: 2rem;
 }
+
+
+
+
+
+
+
+
+
 
 @media (max-width:768px) {
 
@@ -420,6 +477,15 @@ header {
         color: var(--aquamarine-light);
         font-weight: 700;
         font-size: 4rem;
+    }
+
+    .habits {
+        display: block;
+        max-width: 40%;
+    }
+
+    .habit-container {
+        margin-bottom: 1rem;
     }
 }
 
