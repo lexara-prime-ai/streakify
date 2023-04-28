@@ -36,7 +36,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 1rem 7%;
 }
 
@@ -209,6 +209,7 @@ header {
 
 .streak-tracker {
     background: var(--aquamarine-alt);
+    color: var(--aquamarine-alt);
     box-shadow: var(--shadow);
     border-radius: 24px;
     border: 3px solid var(--aquamarine);
@@ -264,7 +265,7 @@ header {
     font-size: .8rem;
     margin-bottom: 1.5rem;
     color: var(--dark-alt);
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .quote span {
@@ -273,6 +274,7 @@ header {
 }
 
 .quote-icon {
+    padding: 1rem;
     color: var(--dark-alt);
     width: 30%;
     transition: .4s all ease;
@@ -367,15 +369,17 @@ header {
 
 .section-title {
     color: var(--aquamarine);
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 2rem;
     text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 3.5rem;
 }
 
 .section-title span {
     color: var(--aquamarine-light);
     font-weight: 900;
+    font-size: 2.5rem;
 }
 
 .habits {
@@ -386,13 +390,22 @@ header {
     max-width: 80%;
     margin: auto;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .habit-container {
     background: var(--aquamarine);
+    box-shadow: var(--shadow);
     border-radius: 24px;
     padding: 2rem;
+    opacity: .7;
+    transition: .4s all ease;
+    cursor: pointer;
+}
+
+.habit-container:hover {
+    transform: scale(.97);
+    opacity: 1;
 }
 
 .habit {
@@ -400,11 +413,17 @@ header {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.active-habit {
+    color: var(--dark);
 }
 
 .habit-title {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 .clock-icon {
@@ -420,6 +439,8 @@ header {
 
 
 
+
+/* MEDIA QUERIES */
 
 @media (max-width:768px) {
 
@@ -481,7 +502,8 @@ header {
 
     .habits {
         display: block;
-        max-width: 40%;
+        max-width: 50%;
+        padding: 2rem;
     }
 
     .habit-container {
@@ -540,5 +562,11 @@ header {
         color: var(--aquamarine-light);
         font-weight: 700;
         font-size: 4rem;
+    }
+
+    .habits {
+        display: block;
+        max-width: 100%;
+        padding: 2rem;
     }
 }
