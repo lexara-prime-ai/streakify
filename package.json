@@ -1,0 +1,12 @@
+{
+  "name": "streakify",
+  "version": "1.0.0",
+  "description": "Streak counter application",
+  "main": "./src/App.ts",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build"
+  },
+  "author": "Irfan Ghat",
+  "license": "ISC"
+}

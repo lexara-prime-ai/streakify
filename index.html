@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streakify | Home | Dashboard</title>
+    <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" type="image/x-icon">
+    <!-- IMPORTS -->
+    <link rel="stylesheet" href="./assets/css/App.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+</head>
+<body>
+    <!-- APP ROOT -->
+    <main id="root">
+        <header>
+            <img src="./assets/images/logos/svg/Color logo - no background.svg" alt="logo" class="logo">
+
+            <nav class="navigation">
+                <ul class="nav-links">
+                    <li class="link-item">
+                        <a href="index.html" class="link is-active" title="View progress status">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a href="index.html" class="link" title="Add or view streaks">
+                            Streaks
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a href="index.html" class="link" title="more about streakify">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <a href="#" class="ellipsis-container">
+                <i class="fas fa-ellipsis ellipsis"></i>
+            </a>
+        </header>
+
+        <section class="input">
+            <div class="input-container">
+                <input type="text" placeholder="Add a habit to track..." id="user-input">
+                <button id="add-btn">
+                    <i class="fas fa-plus add-icon"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="streak-tracker">
+
+            <div class="streak-card">
+
+                <h2 class="quote">
+                    <img src="./assets/images/logos/svg/Black logo - no background.svg" alt="" class="quote-icon">
+                    <p>
+                        Succes is a <span>marathon</span> not a <span>sprint</span>
+                    </p>
+                </h2>
+
+                <h3 class="habit">
+                    Habit to kick | start
+                </h3>
+
+                <h2 class="streak-card-title">
+                    <span>
+                        Current
+                    </span>
+                     Streak 
+                </h2>
+
+                <div class="streak">
+                    <h3 class="days">
+                        Days
+                    </h3>
+
+                    <div class="count">
+                        30
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="streaks">
+
+        </section>
+
+
+    </main>
+
+
+    <!-- SCRIPTS -->
+    <script src="./assets/fontawesome/js/all.js"></script>
+    <script src="./build/App.js"></script>
+</body>
+</html>
