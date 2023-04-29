@@ -2,9 +2,6 @@
 const log = console.log;
 
 class App {
-    // static render() {
-
-    // }
 
     static displayStreakCount() {
         let date = new Date();
