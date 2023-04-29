@@ -418,6 +418,13 @@ header {
 
 .active-habit {
     color: var(--dark);
+    font-weight: 500;
+}
+
+.active-habit span {
+    font-weight: 900;
+    text-decoration: underline;
+    text-transform: capitalize;
 }
 
 .habit-title {
@@ -431,6 +438,9 @@ header {
     font-size: 2rem;
 }
 
+.date-display {
+    color: var(--dark);
+}
 
 
 

@@ -6,20 +6,6 @@ class App {
 
     // }
 
-    static dipslayHabit() {
-        const userInput = document.querySelector('#user-input')! as HTMLInputElement;
-        const activeHabit = document.querySelector('.active-habit') as HTMLElement;
-        // CHECK IF INPUT FIELD IS EMPTY
-        if (userInput.value === '') {
-            alert('Please enter a habit to track...');
-            return;
-        } else {
-            activeHabit.innerHTML = `Track your <span>${userInput.value}</span> habit..`;
-            log(userInput.value);
-        }
-
-    }
-
     static displayStreakCount() {
         let date = new Date();
         let days = date.getMonth();
@@ -28,59 +14,88 @@ class App {
         const count = document.querySelector('.count') as HTMLElement;
         count.innerHTML = days.toString();
 
+
         log(days);
     }
 
+    // ADD HABIT
     static addHabit() {
+        // USER INPUT
         const userInput = document.querySelector('#user-input')! as HTMLInputElement;
+        // HABIT CONTAINER | CONTAINER TO APPEND HABITS TO
         const habitContainer = document.querySelector('.habits') as HTMLElement;
+        // ACTIVE HABIT
+        const activeHabit = document.querySelector('.active-habit') as HTMLElement;
+        // DISPLAY TRACKED HABIT
+        activeHabit.innerHTML = `Track your <span>${userInput.value}</span> habit..`;
+        log(userInput.value);
 
         // DATE FORMAT
         const date = new Date();
-        
-        const dd = date.getDay();
-        const MM = date.getMonth();
-        const yyyy= date.getFullYear();
-        const format = `${dd}/${MM}/${yyyy}`;
-        
+        const dd = date.getDay();               // DAY
+        const MM = date.getMonth();             // MONTH
+        const yyyy = date.getFullYear();        // YEAR
+        const format = `${dd}/${MM}/${yyyy}`;   // dd/MM/yyyy
+
         // CHECK IF INPUT FIELD IS EMPTY
         if (userInput.value === '') {
             alert('Please enter a habit to track...');
             return;
         } else {
+            // HABIT CARD CONTENT STRUCTURE
             habitContainer.innerHTML += `
-        <div class="habit-container">
-            <div class="habit">
+            <div class="habit-container">
+                <div class="habit">
 
-            <h3 class="habit-title">
-                ${userInput.value}
-            </h3>  
+                    <h3 class="habit-title">
+                        ${userInput.value}
+                    </h3>  
 
-                <i class="fas fa-clock clock-icon"></i>
+                    <i class="fas fa-clock clock-icon"></i>
+                </div>
+
+                <div class="date">
+                    <h3 class="date-display">
+                        Start date : ${format}
+                    </h3>
+                </div>
             </div>
-
-            <div class="date">
-                <h3 class="date-display">
-                    Start date : ${format}
-                </h3>
-            </div>
-        </div>
         `;
         }
-
     }
+}
 
-    static displayStartDate() {
-       
+// FORMULA TO CONVERT hours TO milliseconds
+// 1 hour = 60 minutes(1 * 60)
+// 60 minutes = 3600 seconds(60 * 60)
+// 3600 seconds = 3,600,000 milliseconds(3600 * 1000)
+// 1hour = 3,600,000 milliseconds
+
+let hour: number = 1;
+let dayHours: number = 24;
+let seconds: number = 60;
+let minutes: number = 60;
+let milliseconds: number = 1000;
+let converted = 1 * 24 * 60 * 60 * 1000;
+
+// INCREASE DAY COUNT EVERY 24 HOURS
+setInterval(() => {
+
+    // DATE FORMAT
+    const date = new Date();
+    const HH = date.getHours();             // HOURS
+
+    // DAY COUNT
+    const dayCount = document.querySelector('.count') as HTMLElement;
+
+    let count = 0;
+    // INCREASE DAY COUNT ON REACHING 24 HOURS
+    if (HH == 24) {
+        count++;
+        dayCount.innerHTML = count.toString();
     }
-} 
+}, converted)
 
-const addBtn = document.querySelector('#add-btn') as HTMLElement;
-
-// addBtn.addEventListener('click', App.dipslayHabit);
-// addBtn.addEventListener('click', App.displayStreakCount);
-// addBtn.addEventListener('click', App.addHabit);
-// addBtn.addEventListener('click', App.displayStartDate);
 
 
 
